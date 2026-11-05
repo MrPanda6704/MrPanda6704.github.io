@@ -1,102 +1,443 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Utkarsh Garg | Gameplay Programmer</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utkarsh Garg | Gameplay Programmer</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #161920;
+            --card-border: #232733;
+            --accent-color: #4f46e5;
+            --accent-hover: #6366f1;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --tag-bg: #1f2430;
+        }
 
-<style>
-    body {
-        background: #111;
-        color: #eee;
-        font-family: Arial, sans-serif;
-        max-width: 1000px;
-        margin: auto;
-        padding: 40px;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    h1 {
-        font-size: 48px;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
 
-    h2 {
-        margin-top: 60px;
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    .project {
-        background: #1c1c1c;
-        padding: 25px;
-        margin: 20px 0;
-        border-radius: 10px;
-    }
+        /* Header / Bio */
+        header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 30px;
+        }
 
-    .project-video {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background: #000;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        object-fit: cover;
-    }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
+        }
 
-    a {
-        color: #66b3ff;
-    }
-</style>
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-hover);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
 
-</head> <body>
-<h1>Utkarsh Garg</h1>
+        .bio-summary {
+            color: var(--text-muted);
+            max-width: 750px;
+            margin-bottom: 20px;
+        }
 
-<p>
-    Gameplay Programmer specializing in Unreal Engine and C++.
-</p>
+        .links {
+            display: flex;
+            gap: 16px;
+        }
 
-<p>
-    C++ · Unreal Engine 5 · Gameplay Ability System · AI · Blueprints
-</p>
+        .links a {
+            color: var(--text-main);
+            text-decoration: none;
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+            font-size: 0.9rem;
+            transition: border-color 0.2s, background 0.2s;
+        }
 
-<h2>Projects</h2>
+        .links a:hover {
+            border-color: var(--accent-color);
+            background: var(--tag-bg);
+        }
 
-<div class="project">
-    <h3>Gameplay Ability System</h3>
+        /* Section Commons */
+        section {
+            margin-bottom: 60px;
+        }
 
-    <!-- Video slot -->
-    <video class="project-video" controls>
-        <source src="videos/gas-demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+        }
 
-    <p>
-        A modular gameplay ability system developed in Unreal Engine 5.
-    </p>
+        /* Work Experience */
+        .experience-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
 
-    <a href="gas.html">View Project →</a>
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .exp-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .exp-company {
+            color: var(--accent-hover);
+        }
+
+        .exp-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .exp-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .exp-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .project-video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            object-fit: cover;
+        }
+
+        .project-summary {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            color: #d1d5db;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--card-border);
+        }
+
+        .project-links a {
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 650px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .skill-group {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .skill-group h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .skill-item {
+            margin-bottom: 14px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-score {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .skill-bar-bg {
+            width: 100%;
+            height: 6px;
+            background: var(--tag-bg);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Utkarsh Garg</h1>
+        <div class="subtitle">Gameplay Programmer</div>
+        <p class="bio-summary">
+            Specializing in Unreal Engine 5 (C++, GAS, AI) and modular gameplay system design. 
+            Focused on building robust combat mechanics, state-driven behavior architecture, and efficient game pipelines.
+        </p>
+        <div class="links">
+            <a href="https://github.com/mrpanda6704" target="_blank">GitHub</a>
+            <a href="mailto:utkarshgarg505@gmail.com">Email</a>
+        </div>
+    </header>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <h2>Work Experience</h2>
+
+        <div class="experience-card">
+            <div class="exp-header">
+                <div class="exp-title">Software Engineering Intern — <span class="exp-company">S&P Global (TeraHelix)</span></div>
+                <div class="exp-date">June 2026 – Aug 2026</div>
+            </div>
+            <ul class="exp-list">
+                <li>Unified ETL-Mapper testing infrastructure with core Java ecosystem by deprecating legacy Bash scripts.</li>
+                <li>Architected a Java-based API regression testing framework, integrating an internal client to reduce test execution time by over 50%.</li>
+                <li>Decoupled execution logic from test definitions using HTTP files and deployed automated HTML reporting via GitHub Actions CI/CD.</li>
+            </ul>
+        </div>
+
+        <div class="experience-card">
+            <div class="exp-header">
+                <div class="exp-title">Game Development Instructor — <span class="exp-company">IIIT Delhi</span></div>
+                <div class="exp-date">May 2025 – July 2025</div>
+            </div>
+            <ul class="exp-list">
+                <li>Mentored 60+ students in Unreal Engine, improving debugging efficiency and gameplay system design through hands-on guidance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3 class="project-title">Modular GAS Combat Architecture</h3>
+            <video class="project-video" controls poster="">
+                <source src="videos/gas-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="project-summary">
+                A production-ready Unreal Engine 5 combat framework built on the Gameplay Ability System, featuring C++ attribute sets, dynamic stamina/cooldown routing, and asynchronous tasks for complex chained melee combos.
+            </p>
+            <div class="tags">
+                <span class="tag">Unreal Engine 5</span>
+                <span class="tag">C++</span>
+                <span class="tag">GAS</span>
+                <span class="tag">Systemic Combat</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/mrpanda6704" target="_blank">View Repository / Details →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">Missing Half</h3>
+            <video class="project-video" controls poster="">
+                <source src="videos/missing-half-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="project-summary">
+                An award-winning single-player puzzle platformer built in Unity, featuring synchronized dual-character input controls and physics interaction mechanisms.
+            </p>
+            <div class="tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Game Jam (3rd Place)</span>
+                <span class="tag">Puzzle Platformer</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/mrpanda6704" target="_blank">View Project →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">Universal Game Development Script Library</h3>
+            <video class="project-video" controls poster="">
+                <source src="videos/script-library-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="project-summary">
+                A modular suite of reusable C# gameplay architecture components utilizing State and Observer design patterns for state-driven AI navigation, movement, and decoupled event handling.
+            </p>
+            <div class="tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Architecture Patterns</span>
+                <span class="tag">NavMesh AI</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/mrpanda6704" target="_blank">View Repository →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">Angry Birds Clone</h3>
+            <video class="project-video" controls poster="">
+                <source src="videos/angry-birds-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="project-summary">
+                A 2D physics-based arcade projectile system built with LibGDX and Java, simulating real-time trajectory arcs, impulse application, and dynamic destructible material response.
+            </p>
+            <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">LibGDX</span>
+                <span class="tag">2D Physics Engine</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/mrpanda6704" target="_blank">View Repository →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills & Proficiency</h2>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div id="languages-container"></div>
+            </div>
+            <div class="skill-group">
+                <h3>Technologies & Engines</h3>
+                <div id="technologies-container"></div>
+            </div>
+        </div>
+    </section>
+
 </div>
 
-<div class="project">
-    <h3>Boss AI</h3>
+<script>
+    // Configurable skill scores (0 - 100)
+    // Modify these numbers to adjust your proficiency scores.
+    const languagesData = [
+        { name: "C++", score: 95 },
+        { name: "C#", score: 80 },
+        { name: "Java", score: 85 },
+        { name: "Python", score: 75 }
+    ];
 
-    <!-- Video slot -->
-    <video class="project-video" controls>
-        <source src="videos/boss-ai-demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    const technologiesData = [
+        { name: "Unreal Engine (C++, GAS, Blueprints)", score: 95 },
+        { name: "Unity", score: 85 },
+        { name: "LibGDX", score: 70 },
+        { name: "Git (LFS, Self-Hosted Gitea)", score: 90 },
+        { name: "Blender", score: 60 }
+    ];
 
-    <p>
-        A multi-phase boss AI featuring dynamic attack selection
-        and reactive behavior.
-    </p>
+    function renderSortedSkills(skills, containerId) {
+        const container = document.getElementById(containerId);
+        
+        // Sort highest to lowest
+        const sortedSkills = [...skills].sort((a, b) => b.score - a.score);
 
-    <a href="boss-ai.html">View Project →</a>
-</div>
+        container.innerHTML = sortedSkills.map(skill => `
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">${skill.name}</span>
+                    <span class="skill-score">${skill.score}%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar-fill" style="width: ${skill.score}%;"></div>
+                </div>
+            </div>
+        `).join('');
+    }
 
-<h2>About Me</h2>
+    // Auto-sort and render on load
+    renderSortedSkills(languagesData, 'languages-container');
+    renderSortedSkills(technologiesData, 'technologies-container');
+</script>
 
-<p>
-    I'm a gameplay programmer interested in combat systems,
-    AI and systemic gameplay.
-</p>
-
-<h2>Contact</h2>
-
-<p>
-    <a href="https://github.com/YOUR-USERNAME">GitHub</a>
-</p>
-
-</body> </html>
+</body>
+</html>
