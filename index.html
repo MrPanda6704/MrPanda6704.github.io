@@ -260,7 +260,7 @@
         <h1>Utkarsh Garg</h1>
         <div class="subtitle">Gameplay Programmer</div>
         <p class="bio-summary">
-            Specializing in Unreal Engine 5 (C++, GAS, AI) and modular gameplay system design. 
+            Specializing in Unreal Engine 5 (C++, GAS, Blueprints) and modular gameplay system design. 
             Focused on building robust combat mechanics, state-driven behavior architecture, and efficient game pipelines.
         </p>
         <div class="links">
@@ -279,9 +279,9 @@
                 <div class="exp-date">June 2026 – Aug 2026</div>
             </div>
             <ul class="exp-list">
-                <li>Unified ETL-Mapper testing infrastructure with core Java ecosystem by deprecating legacy Bash scripts.</li>
-                <li>Architected a Java-based API regression testing framework, integrating an internal client to reduce test execution time by over 50%.</li>
-                <li>Decoupled execution logic from test definitions using HTTP files and deployed automated HTML reporting via GitHub Actions CI/CD.</li>
+                <li>Unified the ETL-Mapper testing infrastructure with the core Java ecosystem by deprecating legacy Bash scripts, effectively eliminating tech stack fragmentation[cite: 3].</li>
+                <li>Architected a Java-based API regression testing framework, integrating an internal high-performance client via Artifactory to reduce test execution time by over 50%[cite: 3].</li>
+                <li>Decoupled execution logic from test definitions utilizing http files and deployed automated HTML reporting through GitHub Actions CI/CD to improve Developer Experience (DX)[cite: 3].</li>
             </ul>
         </div>
 
@@ -291,7 +291,7 @@
                 <div class="exp-date">May 2025 – July 2025</div>
             </div>
             <ul class="exp-list">
-                <li>Mentored 60+ students in Unreal Engine, improving debugging efficiency and gameplay system design through hands-on guidance.</li>
+                <li>Mentored 60+ students in Unreal Engine, improving debugging efficiency and gameplay system design through hands-on guidance[cite: 3].</li>
             </ul>
         </div>
     </section>
@@ -301,19 +301,20 @@
         <h2>Projects</h2>
 
         <div class="project-card">
-            <h3 class="project-title">Modular GAS Combat Architecture</h3>
+            <h3 class="project-title">GAS Combat Architecture</h3>
             <video class="project-video" controls poster="">
                 <source src="videos/gas-demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <p class="project-summary">
-                A production-ready Unreal Engine 5 combat framework built on the Gameplay Ability System, featuring C++ attribute sets, dynamic stamina/cooldown routing, and asynchronous tasks for complex chained melee combos.
+                Engineered a comprehensive C++ combat framework using the Gameplay Ability System (GAS), utilizing custom Attribute Sets and Gameplay Effects to drive dynamic stamina costs and system-wide cooldown mechanics[cite: 3].
             </p>
             <div class="tags">
-                <span class="tag">Unreal Engine 5</span>
+                <span class="tag">Unreal Engine 5.6</span>
                 <span class="tag">C++</span>
                 <span class="tag">GAS</span>
                 <span class="tag">Systemic Combat</span>
+                span class="tag">RPG</span>
             </div>
             <div class="project-links">
                 <a href="https://github.com/mrpanda6704" target="_blank">View Repository / Details →</a>
@@ -327,13 +328,12 @@
                 Your browser does not support the video tag.
             </video>
             <p class="project-summary">
-                An award-winning single-player puzzle platformer built in Unity, featuring synchronized dual-character input controls and physics interaction mechanisms.
+                Developed a single-player puzzle-platformer in Unity for a game jam, securing 3rd place with mechanics requiring simultaneous control of two characters and synchronized input handling[cite: 3].
             </p>
             <div class="tags">
                 <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">Game Jam (3rd Place)</span>
                 <span class="tag">Puzzle Platformer</span>
+                <span class="tag">C#</span>
             </div>
             <div class="project-links">
                 <a href="https://github.com/mrpanda6704" target="_blank">View Project →</a>
@@ -341,19 +341,19 @@
         </div>
 
         <div class="project-card">
-            <h3 class="project-title">Universal Game Development Script Library</h3>
+            <h3 class="project-title">Damage System</h3>
             <video class="project-video" controls poster="">
-                <source src="videos/script-library-demo.mp4" type="video/mp4">
+                <source src="videos/damage-system-demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <p class="project-summary">
-                A modular suite of reusable C# gameplay architecture components utilizing State and Observer design patterns for state-driven AI navigation, movement, and decoupled event handling.
+                Developed a modular, reusable Unreal Engine damage system using Blueprint Actor Components, supporting multiple damage types and effects such as knockback, stun, and AOE through event-driven logic[cite: 3].
             </p>
             <div class="tags">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">Architecture Patterns</span>
-                <span class="tag">NavMesh AI</span>
+                <span class="tag">Unreal Engine 5.5</span>
+                <span class="tag">Blueprints</span>
+                <span class="tag">Actor Components</span>
+                <span class="tag">Event-Driven Logic</span>
             </div>
             <div class="project-links">
                 <a href="https://github.com/mrpanda6704" target="_blank">View Repository →</a>
@@ -367,7 +367,7 @@
                 Your browser does not support the video tag.
             </video>
             <p class="project-summary">
-                A 2D physics-based arcade projectile system built with LibGDX and Java, simulating real-time trajectory arcs, impulse application, and dynamic destructible material response.
+                Engineered a 2D physics-based projectile system using LibGDX, simulating realistic motion arcs, force application, collision detection, and dynamic state-driven object interactions[cite: 3].
             </p>
             <div class="tags">
                 <span class="tag">Java</span>
@@ -408,7 +408,7 @@
     ];
 
     const technologiesData = [
-        { name: "Unreal Engine (C++, GAS, Blueprints)", score: 95 },
+        { name: "Unreal Engine (C++, Gameplay Ability System, Blueprint)", score: 95 },
         { name: "Unity", score: 85 },
         { name: "LibGDX", score: 70 },
         { name: "Git (LFS, Self-Hosted Gitea)", score: 90 },
